@@ -9,18 +9,20 @@ $C \in \mathbb{R}^{l\times n}$ and $d \in \mathbb{R}^l$ form the piecewise-linea
 are the data associated with the linear constraints of the problem. The decision vector $x$ is restricted to the box $[a_l,a_u]$, with $a_l\leq a_u$ (noting that 
 $a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). 
 
+
+---
 The code is based on an accompanying research paper, in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
 a SemiSmooth Newton method (SSN), the associated linear systems of which are solved via a preconditioned Krylob subspace solver. This repo is 
 dedicated towards the reproducibility of the numerical results presented in the accompanying paper; however, the associated code is well-commented 
 and is intented to be used as a template for research purposes.
+---
+
+
+
+
+
 
 <br/><br/><br/><br/>
-
-
-
-
-
-
 
 ---
 > **_NOTE:_** The datasets utilized by the code are not provided (due to licensing purposes). Nonetheless, we have included readme.txt files in
