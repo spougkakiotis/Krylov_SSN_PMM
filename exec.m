@@ -6,15 +6,12 @@ fid = 1;
 fprintf('Should the default parameters be used?\n');
 default = input('Type 1 for default parameters, or anything else to manually include them.\n');
 if (default == 1)
-    tol = 1e-5;                                             
+    tol = 1e-4;                                             
     max_PMM_iter = 200;                                     
-    max_IPM_iter = 200;                                     
-    max_ADMM_iter = 4000;                                  
-    max_OSQP_iter = 50000;
     % Printing choice (see SSN_PMM documentation).
     printlevel = 3;                                         
     % Choices: "Portfolio_Optimization", "Quantile_Regression", 
-    %          "Binary_Classification", "Pearson_PDE_Optimization", "lasso_regression"
+    %          "Binary_Classification", "PDE_Optimization"
     problem_set = "Portfolio_Optimization";                    
                                                                     
 else
@@ -41,8 +38,9 @@ else
     fprintf('                         0: no printing\n');
     fprintf('                         1: print PMM iterations and parameters\n');
     fprintf('                         2: also print SSN iterations\n');
+    fprintf('                         3: also print Krylov iterations\n');
     while(true)
-        printlevel = input('Type an integer value in k between [0,2].\n');
+        printlevel = input('Type an integer value in k between [0,3].\n');
         if (isinf(printlevel) || isnan(printlevel) || ...
             floor(printlevel)~= printlevel || printlevel > 4 || printlevel < 1)
             fprintf('Incorrect input argument.\n');
@@ -63,11 +61,7 @@ if (problem_set == "Portfolio_Optimization")
     risk_measure.stock_cap = 0.6;
     risk_measure.short_cap = 0;
     risk_measure.tau = 0;
-   % [solution_statistics_PMM]  = Portfolio_optimization_problems(pb_name,risk_measure,tol,max_PMM_iter,printlevel,fid);
-    %[solution_statistics_OSQP] = OSQP_Portfolio_optimization_problem(pb_name,risk_measure,tol,max_OSQP_iter);
-
-    [solution_statistics_IPM]  = IP_PMM_Portfolio_optimization_problem(pb_name,risk_measure,tol,max_IPM_iter,printlevel,fid);
-  %  [solution_statistics_ADMM] = ADMM_Portfolio_optimization_problems(pb_name,risk_measure,tol,max_ADMM_iter,printlevel,fid);
+    [solution_statistics_PMM]  = Portfolio_optimization_problems(pb_name,risk_measure,tol,max_PMM_iter,printlevel,fid);
 elseif (problem_set == "Quantile_Regression")
     % Problem options: 
     %    1. -> 'abalone_scale.txt',   2. -> 'cadata.txt',             3. -> 'cpusmall_scale.txt',
@@ -77,40 +71,26 @@ elseif (problem_set == "Quantile_Regression")
     parameters.alpha = 0.8;
     parameters.tau = 0.8;
     parameters.lambda = 1e-3;    
-   % [solution_statistics_PMM] = Quantile_regression_problems(pb_name,parameters,tol,max_PMM_iter,printlevel,fid);
-  % [solution_statistics_OSQP] = OSQP_Quantile_regression_problems(pb_name,parameters,tol,max_OSQP_iter);
-    [solution_statistics_IPM] = IP_PMM_Quantile_regression_problems(pb_name,parameters,tol,max_IPM_iter,printlevel,fid);
-   % [solution_statistics_ADMM] = ADMM_Quantile_regression_problems(pb_name,parameters,tol,max_ADMM_iter,printlevel,fid);
+    [solution_statistics_PMM] = Quantile_regression_problems(pb_name,parameters,tol,max_PMM_iter,printlevel,fid);
 elseif (problem_set == "Binary_Classification")
     % Problem options: 
     %    1. -> 'real-sim',   2. -> 'rcv1_train.binary',             3. -> 'news20.binary',
-    %    4. -> 'gisette_scale',         5. -> 'epsilon_normalized', 6. -> 'breast-cancer_scale.txt',  7. -> 'a9a.txt'.
     parameters = struct();
     pb_name = 'real-sim';
-    parameters.regularizer = "elastic"; % "elastic" -> combine regularizers, "l1" -> l1 regularizer, "l2" -> l2 regularizer.
+    % "elastic" -> combine regularizers, "l1" -> l1 regularizer, "l2" -> l2 regularizer.
+    parameters.regularizer = "elastic"; 
     if (parameters.regularizer == "elastic")
         parameters.tau_1 = 0.2;
         parameters.tau_2 = 0.2;
     end
     parameters.lambda = 1e-2;
-   % [solution_statistics_PMM] = Binary_classification_problems(pb_name,parameters,tol,max_PMM_iter,printlevel,fid);
-   [solution_statistics_IPM] = IP_PMM_Binary_classification_problems(pb_name,parameters,tol,max_IPM_iter,printlevel,fid);
-   % [solution_statistics_OSQP] = OSQP_Binary_classification_problems(pb_name,parameters,tol,max_OSQP_iter);
-elseif (problem_set == "Pearson_PDE_Optimization")
+    [solution_statistics_PMM] = Binary_classification_problems(pb_name,parameters,tol,max_PMM_iter,printlevel,fid);
+elseif (problem_set == "PDE_Optimization")
     % User specification of the problem to be solved.
     disp('Problem:');
     disp('         1 - Poisson Control: L^1 + L^2-regularizer and bounded control.');
     disp('         2 - Convection Diffusion: L^1 + L^2-regularizer and bounded control.');
     problem_choice = input('Type 1 to 2 or anything else to exit.\n');
-    solution_statistics = Pearson_PDE_Test_Generator(problem_choice,tol,max_PMM_iter,printlevel,fid);
-elseif (problem_set == "lasso_regression")
-            % Problem options: 
-    %    1. -> 'abalone_scale.txt',   2. -> 'cadata.txt',             3. -> 'cpusmall_scale.txt',
-    %    4. -> 'E2006.train',         5. -> 'space_ga_scale.txt'.     6. -> 'YearPredictionMSD'
-    parameters = struct();
-    pb_name = 'YearPredictionMSD';
-    parameters.tau = 0.8;
-    parameters.lambda = 1e-4;    
-    [solution_statistics_PMM] = lasso_regression_problem(pb_name,parameters,tol,max_PMM_iter,printlevel,fid);
+    solution_statistics = PDE_Test_Generator(problem_choice,tol,max_PMM_iter,printlevel,fid);
 end
 
