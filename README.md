@@ -4,9 +4,10 @@ This is a MATLAB implementation of an active-set method suitable for convex quad
 
 $$ \min_{x \in \mathbb{R}^n}\  c^\top x + \frac{1}{2} x^\top Q x + \sum_{i=1}^l \max((Cx+d)_i,0) + ||Dx||_1,\qquad \text{s.t., }Ax = b,\ x \in [a_l,a_u],$$
 
-where $Q \in \mathbb{R}^{n\times n}$ is a positive semidefinite matrix, $D \in \mathbb{R}^{n\times n}$ is a diagonal "weight" matrix,
-$C \in \mathbb{R}^{l\times n}$, $d \in \mathbb{R}^l$ (form the piecewise-linear terms in the objective) and $A \in \mathbb{R}^{m\times n}$, $b \in \mathbb{R}^m$
-are the data associated with the linear constraints of the problem. 
+where $Q \in \mathbb{R}^{n\times n}$ is a positive semidefinite matrix, $c \in \mathbb{R}^n$, $D \in \mathbb{R}^{n\times n}$ is a diagonal "weight" matrix,
+$C \in \mathbb{R}^{l\times n}$ and $d \in \mathbb{R}^l$ form the piecewise-linear (max) terms in the objective, and $A \in \mathbb{R}^{m\times n}$, $b \in \mathbb{R}^m$
+are the data associated with the linear constraints of the problem. The decision vector $x$ is restricted to the box $[a_l,a_u]$, with $a_l\leq a_u$ (noting that 
+$a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). 
 
 The code is based on an accompanying research paper, in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
 a SemiSmooth Newton method (SSN), the associated linear systems of which are solved via a preconditioned Krylob subspace solver. This repo is 
