@@ -16,7 +16,7 @@ and is intented to be used as a template for research purposes.
 
 
 
-**NOTE:** The datasets utilized by the code are not provided (due to licensing purposes). Nonetheless, we have included readme.txt files in
+> **_NOTE:_** The datasets utilized by the code are not provided (due to licensing purposes). Nonetheless, we have included readme.txt files in
 the appropriate places where the user should include the relevant datasets. Within these readme files, one can find the relevant links for
 downloading the associated datasets. 
 
