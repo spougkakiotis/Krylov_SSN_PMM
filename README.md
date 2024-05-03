@@ -8,7 +8,7 @@ where $Q \in \mathbb{R}^{n\times n}$ is a positive semidefinite matrix, and $C \
 
 The code is based on an accompanying research paper, in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
 a SemiSmooth Newton method (SSN), the associated linear systems of which are solved via a preconditioned Krylob subspace solver. This repo is 
-dedicated towards the reproducibility of the numerical results presented in the accompanying paper, however, the associated code is well-commented 
+dedicated towards the reproducibility of the numerical results presented in the accompanying paper; however, the associated code is well-commented 
 and is intented to be used as a template for research purposes.
 
 
