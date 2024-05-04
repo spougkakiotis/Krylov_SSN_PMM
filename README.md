@@ -11,12 +11,6 @@ $a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). <br/>
 
 <br/>
 
-The code is based on an accompanying research paper, in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
-a SemiSmooth Newton method (SSN), the associated linear systems of which are solved via a preconditioned Krylob subspace solver. This repo is 
-dedicated towards the reproducibility of the numerical results presented in the accompanying paper; however, the associated code is well-commented 
-and is intented to be used as a template for research purposes.
-
-
 <br/>
 The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
 
@@ -69,6 +63,15 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 
 ---
 
+<br/><br/><br/><br/>
+
+---
+> **_NOTE:_**
+The code is based on an accompanying research paper, in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
+a SemiSmooth Newton method (SSN), the associated linear systems of which are solved via a preconditioned Krylob subspace solver. This repo is 
+dedicated towards the reproducibility of the numerical results presented in the accompanying paper; however, the associated code is well-commented 
+and is intented to be used as a template for research purposes.
+---
 
 <br/><br/><br/><br/>
 
