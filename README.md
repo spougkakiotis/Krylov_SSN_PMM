@@ -73,7 +73,7 @@ dedicated towards the reproducibility of the numerical results presented in the 
 and is intented to be used as a template for research purposes.
 ---
 
-<br/><br/><br/><br/>
+<br/>
 
 ---
 > **_NOTE:_** The datasets utilized by the code are not provided (due to licensing reasons). Nonetheless, we have included readme.txt files in
