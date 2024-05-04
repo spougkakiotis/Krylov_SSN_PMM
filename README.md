@@ -21,7 +21,14 @@ and is intented to be used as a template for research purposes.
 The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
 
 ---
-<strong> Input: </strong>
+<strong> Input: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
+
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth item</li>
+</ul>
 
 ---
 
