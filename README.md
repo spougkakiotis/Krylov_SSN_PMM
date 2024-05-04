@@ -18,7 +18,11 @@ and is intented to be used as a template for research purposes.
 
 
 <br/>
-The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. This file takes as input 
+The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
+
+---
+<strong> Input: </strong>
+---
 
 
 
