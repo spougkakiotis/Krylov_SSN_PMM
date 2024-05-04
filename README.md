@@ -13,7 +13,7 @@ Let
 $$f(x) \triangleq c^\top x + \frac{1}{2} x^\top Q x,$$
 $$h(x) \triangleq \sum_{i=1}^l \max(w_i,0),$$
 and
-$$\delta_{\mathcal{K}}(x) = 0\text{ if }x \in \mathcal{K}\text{ and }+\infty\text{ if }x \notin \mathcal{K}.$$
+$$\delta_{\mathcal{K}}(x) = 0\quad\text{ if }x \in \mathcal{K}\qquad\text{ and }+\infty\quad\text{ if }x \notin \mathcal{K}.$$
 
 <br/>
 
