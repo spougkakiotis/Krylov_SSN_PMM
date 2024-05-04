@@ -36,9 +36,11 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
   <li> <code>.D</code> -> the weight vector for possible ell-1 norm in the objective (<em>Default</em>: all zeros) </li>
   <li> <code>.tol</code> -> the specified tolerance for termination (<em>Default</em>: $10^{-4}$) </li>
   <li> <code>.maxit</code> -> the maximum allowed number of PMM iterations (<em>Default</em>: 200)  </li>
-  <li> <code>.pl</code> -> <ul>
-      <li>Indented item</li>
-      <li>Indented item</li>
+  <li> <code>.pl</code> -> Possible choices <ul>
+      <li>0 for not printing intermediate iterates</li>
+      <li>1 for printing only PMM iterates (<em>Default</em>)</li>
+      <li>2 for additionally printing SNN iterates</li>
+      <li>3 for additionally printing Krylov iterate info</li>
     </ul> </li>
   <li> <code>.p_fid</code> -> file ID to print output (<em>Default</em>: 1 (prints on workspace)).  </li>
 
@@ -46,6 +48,33 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 
 ---
 
+---
+<strong> Output: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
+
+<ul>
+  <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
+  <li> <code>.A</code> -> the (sparse) linear equalities coefficient matrix (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.c</code> -> the linear coefficients of the objective function (<em>Default</em>: all zeros) </li>
+  <li> <code>.b</code> -> the right hand side of the linear equalities (Default: all zeros) (<em>Default</em>: all zeros) </li>
+  <li> <code>.d</code> -> the constant displacement in $max(\cdot,0)$ terms in the objective (<em>Default</em>: all zeros) </li>
+  <li> <code>.lb</code> -> the lower bound vector on the primal variables $x$ (<em>Default</em>: all $-\infty$) </li>
+  <li> <code>.ub</code> -> the upper bound vector on the primal variables $x$ (<em>Default</em>: all $+\infty$) </li>
+  <li> <code>.D</code> -> the weight vector for possible ell-1 norm in the objective (<em>Default</em>: all zeros) </li>
+  <li> <code>.tol</code> -> the specified tolerance for termination (<em>Default</em>: $10^{-4}$) </li>
+  <li> <code>.maxit</code> -> the maximum allowed number of PMM iterations (<em>Default</em>: 200)  </li>
+  <li> <code>.pl</code> -> Possible choices <ul>
+      <li>0 for not printing intermediate iterates</li>
+      <li>1 for printing only PMM iterates (<em>Default</em>)</li>
+      <li>2 for additionally printing SNN iterates</li>
+      <li>3 for additionally printing Krylov iterate info</li>
+    </ul> </li>
+  <li> <code>.p_fid</code> -> file ID to print output (<em>Default</em>: 1 (prints on workspace)).  </li>
+
+</ul>
+
+---
 
 
 <br/><br/><br/><br/>
