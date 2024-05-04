@@ -2,7 +2,7 @@
 
 This is a MATLAB implementation of an active-set method suitable for convex quadratic programming problems with piecewise linear terms of the following form:
 
-$$ \min_{x \in \mathbb{R}^n}\  c^\top x + \frac{1}{2} x^\top Q x + \sum_{i=1}^l \max((Cx+d)_i,0) + ||Dx||_1,\qquad \text{s.t., }Ax = b,\ x \in [a_l,a_u],$$
+$$ \min_{x \in \mathbb{R}^n}\  c^\top x + \frac{1}{2} x^\top Q x + \sum_{i=1}^l \max((Cx+d)_i,0) + ||Dx||_1,\qquad \text{s.t., }Ax = b,\ x \in [a_l,a_u], \qquad \text{(P)}$$
 
 where $Q \in \mathbb{R}^{n\times n}$ is a positive semidefinite matrix, $c \in \mathbb{R}^n$, $D \in \mathbb{R}^{n\times n}$ is a diagonal "weight" matrix,
 $C \in \mathbb{R}^{l\times n}$ and $d \in \mathbb{R}^l$ form the piecewise-linear (max) terms in the objective, and $A \in \mathbb{R}^{m\times n}$, $b \in \mathbb{R}^m$
@@ -54,8 +54,8 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 <ul>
   <li> <code>.opt</code> -> an integer variable indicating the termination status: <ul>
       <li>status = 0 $\Leftrightarrow$ <em>"optimal solution found"</em></li>
-      <li>status = 1 <=> <em>"maximum number of iterations reached"</em></li>
-      <li>status = 2 <=> <em>"termination due to numerical errors"</em></li>
+      <li>status = 1 $\Leftrightarrow$ <em>"maximum number of iterations reached"</em></li>
+      <li>status = 2 $\Leftrightarrow$ <em>"termination due to numerical errors"</em></li>
     </ul> </li>
   <li> <code>.x</code> -> "Optimal" primal solution </li>
   <li> <code>.y1</code> -> Lagrange multiplier vector corresponding to equality constraints </li>
