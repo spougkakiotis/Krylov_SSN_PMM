@@ -24,10 +24,10 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 <strong> Input: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
 
 <ul>
-  <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as sparse(n,n)) </li>
-  <li>Second item</li>
-  <li>Third item</li>
-  <li>Fourth item</li>
+  <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
+  <li> <code>.A</code> -> the (sparse) linear equalities coefficient matrix (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
 </ul>
 
 ---
