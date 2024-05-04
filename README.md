@@ -20,9 +20,10 @@ and is intented to be used as a template for research purposes.
 <br/>
 The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
 
-> <strong> Input: </strong>
+---
+<strong> Input: </strong>
 
-
+---
 
 
 
