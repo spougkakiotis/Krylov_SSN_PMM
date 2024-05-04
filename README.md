@@ -21,7 +21,7 @@ and is intented to be used as a template for research purposes.
 The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
 
 ---
-<strong> Input: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
+<strong> <h2>Input</h2>: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
 
 <ul>
   <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
@@ -49,7 +49,7 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 ---
 
 ---
-<strong> Output: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
+<strong> <h2>Output</h2>: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
 
 <ul>
   <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
