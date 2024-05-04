@@ -7,7 +7,9 @@ $$ \min_{x \in \mathbb{R}^n}\  c^\top x + \frac{1}{2} x^\top Q x + \sum_{i=1}^l 
 where $Q \in \mathbb{R}^{n\times n}$ is a positive semidefinite matrix, $c \in \mathbb{R}^n$, $D \in \mathbb{R}^{n\times n}$ is a diagonal "weight" matrix,
 $C \in \mathbb{R}^{l\times n}$ and $d \in \mathbb{R}^l$ form the piecewise-linear (max) terms in the objective, and $A \in \mathbb{R}^{m\times n}$, $b \in \mathbb{R}^m$
 are the data associated with the linear constraints of the problem. The decision vector $x$ is restricted to the box $[a_l,a_u]$, with $a_l\leq a_u$ (noting that 
-$a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). 
+$a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). <br/>
+
+Let $f(x) \triangleq c^\top x + \frac{1}{2} x^\top Q x$, $h(x) \triangleq 4$
 
 <br/>
 
