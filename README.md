@@ -24,7 +24,7 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 <strong> Input: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
 
 <ul>
-  <li>First item</li>
+  <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as sparse(n,n)) </li>
   <li>Second item</li>
   <li>Third item</li>
   <li>Fourth item</li>
@@ -37,7 +37,7 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 <br/><br/><br/><br/>
 
 ---
-> **_NOTE:_** The datasets utilized by the code are not provided (due to licensing purposes). Nonetheless, we have included readme.txt files in
+> **_NOTE:_** The datasets utilized by the code are not provided (due to licensing reasons). Nonetheless, we have included readme.txt files in
 the appropriate places where the user should include the relevant datasets. Within these readme files, one can find the relevant links for
 downloading the associated datasets. 
 ---
