@@ -20,11 +20,11 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 <ul>
   <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
   <li> <code>.A</code> -> the (sparse) linear equalities coefficient matrix (if empty, provide as <code>sparse(0,n)</code>) </li>
-  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
-  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $\max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
+  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $\max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
   <li> <code>.c</code> -> the linear coefficients of the objective function (<em>Default</em>: all zeros) </li>
   <li> <code>.b</code> -> the right hand side of the linear equalities (Default: all zeros) (<em>Default</em>: all zeros) </li>
-  <li> <code>.d</code> -> the constant displacement in $max(\cdot,0)$ terms in the objective (<em>Default</em>: all zeros) </li>
+  <li> <code>.d</code> -> the constant displacement in $\max(\cdot,0)$ terms in the objective (<em>Default</em>: all zeros) </li>
   <li> <code>.lb</code> -> the lower bound vector on the primal variables $x$ (<em>Default</em>: all $-\infty$) </li>
   <li> <code>.ub</code> -> the upper bound vector on the primal variables $x$ (<em>Default</em>: all $+\infty$) </li>
   <li> <code>.D</code> -> the weight vector for possible ell-1 norm in the objective (<em>Default</em>: all zeros) </li>
@@ -53,7 +53,7 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
     </ul> </li>
   <li> <code>.x</code> -> "Optimal" primal solution </li>
   <li> <code>.y1</code> -> Lagrange multiplier vector corresponding to equality constraints </li>
-  <li> <code>.y2</code> -> Lagrange multiplier vector corresponding to the $max(\cdot,0)$ terms (see the dual problem (D) as shown in the paper) </li>
+  <li> <code>.y2</code> -> Lagrange multiplier vector corresponding to the $\max(\cdot,0)$ terms (see the dual problem (D) as shown in the paper) </li>
   <li> <code>.z</code> -> Lagrange multiplier vector corresponding to box constraints on $x$ </li>
   <li> <code>.PMM_iter</code> -> number of PMM iterations to termination </li>
   <li> <code>.SSN_iter</code> -> number of SSN iterations to termination </li>
