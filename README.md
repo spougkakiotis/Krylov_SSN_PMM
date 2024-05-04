@@ -9,12 +9,6 @@ $C \in \mathbb{R}^{l\times n}$ and $d \in \mathbb{R}^l$ form the piecewise-linea
 are the data associated with the linear constraints of the problem. The decision vector $x$ is restricted to the box $[a_l,a_u]$, with $a_l\leq a_u$ (noting that 
 $a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). <br/>
 
-Let 
-$$f(x) \triangleq c^\top x + \frac{1}{2} x^\top Q x,$$
-$$h(x) \triangleq \sum_{i=1}^l \max(w_i,0),$$
-and
-$$\delta_{\mathcal{K}}(x) = 0\quad\text{ if }x \in \mathcal{K}\qquad\text{ and }+\infty\quad\text{ if }x \notin \mathcal{K}.$$
-
 <br/>
 
 The code is based on an accompanying research paper, in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
@@ -65,7 +59,7 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
     </ul> </li>
   <li> <code>.x</code> -> "Optimal" primal solution </li>
   <li> <code>.y1</code> -> Lagrange multiplier vector corresponding to equality constraints </li>
-  <li> <code>.y2</code> -> Lagrange multiplier vector corresponding to the $max(\cdot,0)$ terms (see the dual problem (D) above) </li>
+  <li> <code>.y2</code> -> Lagrange multiplier vector corresponding to the $max(\cdot,0)$ terms (see the dual problem (D) as shown in the paper) </li>
   <li> <code>.z</code> -> Lagrange multiplier vector corresponding to box constraints on $x$ </li>
   <li> <code>.PMM_iter</code> -> number of PMM iterations to termination </li>
   <li> <code>.SSN_iter</code> -> number of SSN iterations to termination </li>
