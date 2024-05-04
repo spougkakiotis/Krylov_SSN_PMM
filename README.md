@@ -9,7 +9,11 @@ $C \in \mathbb{R}^{l\times n}$ and $d \in \mathbb{R}^l$ form the piecewise-linea
 are the data associated with the linear constraints of the problem. The decision vector $x$ is restricted to the box $[a_l,a_u]$, with $a_l\leq a_u$ (noting that 
 $a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). <br/>
 
-Let $f(x) \triangleq c^\top x + \frac{1}{2} x^\top Q x$, $h(x) \triangleq \sum_{i=1}^l \max(w_i,0)$, and $\delta_{\mathcal{K}}(x) = 0$ if $x \in \mathcal{K}$ and $+\infty$ if $x \notin \mathcal{K}$.
+Let 
+$$f(x) \triangleq c^\top x + \frac{1}{2} x^\top Q x,$$
+$$h(x) \triangleq \sum_{i=1}^l \max(w_i,0),$$
+and
+$$\delta_{\mathcal{K}}(x) = 0\text{ if }x \in \mathcal{K}\text{ and }+\infty\text{ if }x \notin \mathcal{K}.$$
 
 <br/>
 
