@@ -53,7 +53,7 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 
 <ul>
   <li> <code>.opt</code> -> an integer variable indicating the termination status: <ul>
-      <li>status = 0 <=> <em>"optimal solution found"</em></li>
+      <li>status = 0 $\Leftrightarrow$ <em>"optimal solution found"</em></li>
       <li>status = 1 <=> <em>"maximum number of iterations reached"</em></li>
       <li>status = 2 <=> <em>"termination due to numerical errors"</em></li>
     </ul> </li>
