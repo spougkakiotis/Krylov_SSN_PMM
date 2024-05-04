@@ -21,7 +21,7 @@ and is intented to be used as a template for research purposes.
 The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
 
 ---
-<strong> <h2>Input</h2>: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
+<strong> <h2>Input:</h2> </strong> A MATLAB struct <code>pb_struct</code>, with the following fields:
 
 <ul>
   <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
@@ -49,29 +49,22 @@ The core file containing the basic active-set method is <strong>SSN_PMM.m</stron
 ---
 
 ---
-<strong> <h2>Output</h2>: </strong> A MATLAB struct <code> pb_struct </code>, with the following fields:
+<strong> <h2>Output:</h2> </strong> A MATLAB struct <code>solution_struct</code>, with the following fields:
 
 <ul>
-  <li> <code>.Q</code> -> the (sparse) coefficient matrix of the quadratic in the objective (if empty, provide as <code>sparse(n,n)</code>) </li>
-  <li> <code>.A</code> -> the (sparse) linear equalities coefficient matrix (if empty, provide as <code>sparse(0,n)</code>) </li>
-  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
-  <li> <code>.C</code> -> the (sparse) coefficient matrix appearing within the $max(\cdot,0)$ term in the objective (if empty, provide as <code>sparse(0,n)</code>) </li>
-  <li> <code>.c</code> -> the linear coefficients of the objective function (<em>Default</em>: all zeros) </li>
-  <li> <code>.b</code> -> the right hand side of the linear equalities (Default: all zeros) (<em>Default</em>: all zeros) </li>
-  <li> <code>.d</code> -> the constant displacement in $max(\cdot,0)$ terms in the objective (<em>Default</em>: all zeros) </li>
-  <li> <code>.lb</code> -> the lower bound vector on the primal variables $x$ (<em>Default</em>: all $-\infty$) </li>
-  <li> <code>.ub</code> -> the upper bound vector on the primal variables $x$ (<em>Default</em>: all $+\infty$) </li>
-  <li> <code>.D</code> -> the weight vector for possible ell-1 norm in the objective (<em>Default</em>: all zeros) </li>
-  <li> <code>.tol</code> -> the specified tolerance for termination (<em>Default</em>: $10^{-4}$) </li>
-  <li> <code>.maxit</code> -> the maximum allowed number of PMM iterations (<em>Default</em>: 200)  </li>
-  <li> <code>.pl</code> -> Possible choices <ul>
-      <li>0 for not printing intermediate iterates</li>
-      <li>1 for printing only PMM iterates (<em>Default</em>)</li>
-      <li>2 for additionally printing SNN iterates</li>
-      <li>3 for additionally printing Krylov iterate info</li>
+  <li> <code>.opt</code> -> an integer variable indicating the termination status: <ul>
+      <li>status = 0 <=> <em>"optimal solution found"</em></li>
+      <li>status = 1 <=> <em>"maximum number of iterations reached"</em></li>
+      <li>status = 2 <=> <em>"termination due to numerical errors"</em></li>
     </ul> </li>
-  <li> <code>.p_fid</code> -> file ID to print output (<em>Default</em>: 1 (prints on workspace)).  </li>
-
+  <li> <code>.x</code> -> "Optimal" primal solution </li>
+  <li> <code>.y1</code> -> Lagrange multiplier vector corresponding to equality constraints </li>
+  <li> <code>.y2</code> -> Lagrange multiplier vector corresponding to the $max(\cdot,0)$ terms (see the dual problem (D) above) </li>
+  <li> <code>.z</code> -> Lagrange multiplier vector corresponding to box constraints on $x$ </li>
+  <li> <code>.PMM_iter</code> -> number of PMM iterations to termination </li>
+  <li> <code>.SSN_iter</code> -> number of SSN iterations to termination </li>
+  <li> <code>.Krylov_iter</code> -> number of Krylov iterations to termination </li>
+  <li> <code>.num_fact</code> -> the total number of factorizations performed (preconditioner factorizations) </li>
 </ul>
 
 ---
