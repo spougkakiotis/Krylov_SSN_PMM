@@ -12,7 +12,12 @@ $a_l$ can have $-\infty$ entries, while $a_u$ can have $+\infty$ ones). <br/>
 <br/>
 
 <br/>
-The core file containing the basic active-set method is <strong>SSN_PMM.m</strong>. <br/>
+
+---
+
+The core file containing the basic active-set method is <strong><code>SSN_PMM.m</code></strong>. <br/>
+
+---
 
 ---
 <strong> <h2>Input:</h2> </strong> A MATLAB struct <code>pb_struct</code>, with the following fields:
