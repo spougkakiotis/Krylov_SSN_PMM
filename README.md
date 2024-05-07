@@ -72,8 +72,10 @@ The core file containing the basic active-set method is <strong><code>SSN_PMM.m<
 
 ---
 > **_NOTE:_**
-The code is based on an accompanying research paper with title<br/><center>**An efficient active-set method with applications to sparse
-approximations and risk minimization**</center><br/>in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
+The code is based on an accompanying research paper with title
+> <br/><br/><center>**An efficient active-set method with applications to sparse
+approximations and risk minimization**</center><br/><br/>
+in which we derive an appropriate Proximal Method of Multipliers (PMM) combined with
 a SemiSmooth Newton method (SSN), the associated linear systems of which are solved via a preconditioned Krylob subspace solver. The paper 
 can be accessed using the following link:<br/><br/>
        <center><url>https://www.researchgate.net/publication/380375630_An_efficient_active-set_method_with_applications_to_sparse_approximations_and_risk_minimization</url></center><br/><br/>
